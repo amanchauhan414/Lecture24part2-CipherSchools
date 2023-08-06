@@ -1,0 +1,79 @@
+import React from 'react';
+import './App.css';
+
+function App() {
+  return (
+    <div className="App">
+      <h1 style={{ color: 'red' }}>Welcome to My React App</h1>
+      <div>
+        <label>Username:</label>
+        <input type="text" placeholder="Enter your username" />
+      </div>
+      <div>
+        <label>Password:</label>
+        <input type="password" placeholder="Enter your password" />
+      </div>
+      <p>I am a paragraph.</p>
+    </div>
+  );
+}
+
+export default App;
+
+
+
+
+5 wys to make http request.
+There are several ways to make HTTP requests in various programming languages and frameworks. Here are five common methods:
+
+Using the Fetch API (JavaScript):
+The Fetch API is a modern browser feature that allows you to make asynchronous HTTP requests in JavaScript. It returns Promises and is widely used in modern web development.
+
+javascript
+Copy code
+fetch('https://api.example.com/data')
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.error('Error:', error));
+Using Axios (JavaScript):
+Axios is a popular third-party library for making HTTP requests in JavaScript. It supports Promises and provides a simple and easy-to-use interface.
+
+javascript
+Copy code
+const axios = require('axios');
+
+axios.get('https://api.example.com/data')
+  .then(response => console.log(response.data))
+  .catch(error => console.error('Error:', error));
+Using XMLHttpRequest (JavaScript, older approach):
+XMLHttpRequest is an older method for making HTTP requests in JavaScript. While not as commonly used today, it's important to be aware of it.
+
+javascript
+Copy code
+var xhr = new XMLHttpRequest();
+xhr.open('GET', 'https://api.example.com/data', true);
+xhr.onload = function () {
+  if (xhr.status === 200) {
+    console.log(xhr.responseText);
+  }
+};
+xhr.send();
+Using Python's requests library (Python):
+The requests library is a popular choice for making HTTP requests in Python due to its simplicity and ease of use.
+
+python
+Copy code
+import requests
+
+response = requests.get('https://api.example.com/data')
+if response.status_code == 200:
+    data = response.json()
+    print(data)
+else:
+    print('Error:', response.status_code)
+Using cURL (Command Line):
+cURL is a command-line tool for transferring data with URLs. It's a versatile option for making HTTP requests from the command line.
+
+bash
+Copy code
+curl https://api.example.com/data
